@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disc Golf Throw Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Disc Golf Throw Tracker</h1>
+	
+	<div class="throw-type">
+		<h2>Throw Type</h2>
+		<button onclick="selectThrow('Drive')">Drive</button>
+		<button onclick="selectThrow('Approach')">Approach</button>
+		<button onclick="selectThrow('Putt')">Putt</button>
+	</div>
+	
+	<div class="throw-direction">
+		<h2>Throw Direction</h2>
+		<button onclick="selectDirection('Backhand')">Backhand</button>
+		<button onclick="selectDirection('Forehand')">Forehand</button>
+	</div>
+	
+	<div class="record-throw">
+		<h2>Record Throw</h2>
+		<button onclick="recordThrow(true)">Success</button>
+		<button onclick="recordThrow(false)">Failure</button>
+	</div>
+	
+	<p>Throws Recorded: <span id="throwCount">0</span></p>
+	<p>Drive Success Rate: <span id="driveSuccessRate">0%</span></p>
+	<p>Approach Success Rate: <span id="approachSuccessRate">0%</span></p>
+	<p>Putt Success Rate: <span id="puttSuccessRate">0%</span></p>
+	<p>Backhand Success Rate: <span id="backhandSuccessRate">0%</span></p>
+	<p>Forehand Success Rate: <span id="forehandSuccessRate">0%</span></p>
+    <script src="script.js"></script>
+	
+</body>
+</html>
