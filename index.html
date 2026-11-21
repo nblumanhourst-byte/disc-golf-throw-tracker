@@ -12,9 +12,9 @@
 	
 	<div class="throw-type">
 		<h2>Throw Type</h2>
-		<button onclick="selectThrow('Drive')">Drive</button>
-		<button onclick="selectThrow('Approach')">Approach</button>
-		<button onclick="selectThrow('Putt')">Putt</button>
+		<button id="driveButton" onclick="selectThrow('Drive')">Drive</button>
+		<button id="approachButton" onclick="selectThrow('Approach')">Approach</button>
+		<button id="puttButton" onclick="selectThrow('Putt')">Putt</button>
 	</div>
 	
 	<div class="throw-direction">
@@ -28,6 +28,8 @@
 		<button onclick="recordThrow(true)">Success</button>
 		<button onclick="recordThrow(false)">Failure</button>
 	</div>
+	
+	<div id="successCriteria"></div>
 	
 	<p>Throws Recorded: <span id="throwCount">0</span></p>
 	<p>Drive Success Rate: <span id="driveSuccessRate">0%</span></p>

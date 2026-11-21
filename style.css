@@ -69,6 +69,14 @@ button.selected {
     background-color: #8b3030;
 }
 
+#successCriteria {
+	white-space: pre-line;
+	padding: 10px;
+	background-color: #246b45;
+	border-radius: 8px;
+	margin: 10px 0;
+}
+
 /* Statistics */
 
 .stats {

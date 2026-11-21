@@ -20,6 +20,8 @@ function selectThrow(throwType) {
 	
 	//add the selected class to that button
 	clickedButton.classList.add("selected");
+	
+	updateSuccessCriteria()
 }
 
 function selectDirection(throwDirection) {
@@ -40,6 +42,27 @@ function selectDirection(throwDirection) {
 	
 	//add the selected class to that button
 	clickedButton.classList.add("selected");
+	
+}
+
+function updateSuccessCriteria() {
+	const criteria = document.getElementById("successCriteria");
+	
+	if (document.getElementById("driveButton").classList.contains("selected")) {
+		criteria.textContent = "Possible Criteria for Success:\n\nDid you hit your intended line?\n\nDid you hit your intended angle?";
+	}
+	
+	else if (document.getElementById("approachButton").classList.contains("selected")) {
+		criteria.textContent = "Possible Criteria for Success:\n\nDid you excecute your intended shot shape?\n\nDid you hit you intended landing zone?";
+	}
+	
+	else if (document.getElementById("puttButton").classList.contains("selected")) {
+		criteria.textContent = "Possible Criteria for Success:\n\nDid you make the putt?";
+	}
+	
+	else {
+		criteria.textContent = "Good Luck!";
+	}
 }
 
 function recordThrow(success) {
@@ -89,11 +112,11 @@ function calculateStats() {
 	});
 	
 	let backhands = throws.filter(function(throwRecord) {
-		return throwRecord.direction === "Backhand";
+		return throwRecord.direction === "Backhand" && throwRecord.type !== "Putt";
 	});
 
 	let forehands = throws.filter(function(throwRecord) {
-		return throwRecord.direction === "Forehand";
+		return throwRecord.direction === "Forehand" && throwRecord.type !== "Putt";
 	});
 	
 	let successfulBackhands = backhands.filter(function(throwRecord) {
